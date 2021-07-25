@@ -1,0 +1,95 @@
+<html>
+	<head>
+		<title> Food Website</title>
+		<link rel="stylesheet" href="style2.css">
+	</head>
+<body>
+		<div class="container">
+			<div class="navbar">
+				<img src="foodlogo.png" class="foodlogo2">
+					<nav>
+						<ul>
+							<li><a href="#">Home</a></li>
+							<li><a href="#">Varieties</a></li>
+							<li><a href="#">Recipes</a></li>
+							<li><a href="#">About Us</a></li>
+
+						</ul>
+					</nav>
+						<img src="menu.png" class="menu-icon">
+			</div>
+				<div class="row">
+					<div class="col">
+						<div class="text-box">
+							<h5> Our Health</h5>
+								<h1>"<b>People</b> who <b>love to eat </b>are always the <b>best people</b>."</h1>
+								<h2><i>"hedonist"</i></h2>
+						</div>
+							<img src="circle.png" class="small-icon1">
+							<img src="circle.png" class="small-icon2">
+							<img src="square.png" class="small-icon3">
+					</div>
+					<div class="col">
+						<div class="gallery-box">
+							<img src="pic2.jpg" Id="gallery">
+								<ul>
+									<li class="btn">*</li>
+									<li class="btn">*</li>
+									<li class="btn">*</li>
+									<li class="btn">*</li>
+									<li class="btn">*</li>
+									<li class="btn">*</li>
+									<li class="btn">*</li>
+									<li class="btn">*</li>
+								</ul>
+
+						</div>
+					</div>	
+				</div>
+					<img src="circle.png" class="small-icon4">
+					<img src="square.png" class="small-icon5">
+		</div>
+
+		<!--------cursor style------->
+
+
+		<div Id="cursor"></div>
+
+			<script>
+				var cursor = document.getElementById("cursor");
+
+					document.onmousemove = function(e){
+					cursor.style.left = (e.pageX - 25) + "px";
+					cursor.style.top = (e.pageY - 25) + "px";
+					cursor.style.display = "block";
+					}			
+			</script>
+
+
+		<script>
+			var btn = document.getElementsByClassName("btn");
+			var gallery = document.getElementById("gallery");
+
+			var images = new Array(
+				"pic1.jpg",
+				"pic2.jpg",
+				"pic3.jpg",
+				"pic4.jpg",
+				"pic5.png",
+				"pic6.jpg",
+				"pic7.jpg",
+				"pic8.jpg"
+				);
+
+				for (let i=0; i<btn.length; i++) {
+					btn[i].onclick = function()
+					{
+						gallery.src = images[i];
+						let current = document.getElementByClassName("active");
+						current[0].className = current[0].className.replace("active", "");
+						this.className += "active";
+					};
+				}
+		</script>
+</body>
+</html>
